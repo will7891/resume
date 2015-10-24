@@ -1,0 +1,110 @@
+﻿Build started 2/22/2014 0:06:48.
+     1>Project "C:\Users\William\Documents\Visual Studio 2010\Projects\ATM\ATM.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\ATM.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Release\ATM.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\ATM.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ATM.cpp ATMAccount.cpp ATMAcctActy.cpp ATMAmount.cpp ATMDlg.cpp ATMMainMenu.cpp
+         ATM.cpp
+         ATMAccount.cpp
+         ATMAcctActy.cpp
+         ATMAmount.cpp
+     1>ATMAmount.cpp(64): error C2664: 'CWnd::SetWindowTextW' : cannot convert parameter 1 from 'const char [5]' to 'LPCTSTR'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>ATMAmount.cpp(86): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [5]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+         ATMDlg.cpp
+     1>ATMDlg.cpp(234): error C2664: 'BOOL CStdioFile::Open(LPCTSTR,UINT,CFileException *)' : cannot convert parameter 1 from 'const char [17]' to 'LPCTSTR'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>ATMDlg.cpp(235): error C2664: 'BOOL CStdioFile::Open(LPCTSTR,UINT,CFileException *)' : cannot convert parameter 1 from 'const char [20]' to 'LPCTSTR'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>ATMDlg.cpp(240): error C2664: 'LPTSTR CStdioFile::ReadString(LPTSTR,UINT)' : cannot convert parameter 1 from 'char [100]' to 'LPTSTR'
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>ATMDlg.cpp(240): fatal error C1903: unable to recover from previous error(s); stopping compilation
+         ATMMainMenu.cpp
+     1>ATMMainMenu.cpp(29): error C2440: 'initializing' : cannot convert from 'const char [1]' to 'ATL::CStringT<BaseType,StringTraits>'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Constructor for class 'ATL::CStringT<BaseType,StringTraits>' is declared 'explicit'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+     1>ATMMainMenu.cpp(76): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [5]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>ATMMainMenu.cpp(83): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [5]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>ATMMainMenu.cpp(96): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [5]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>ATMMainMenu.cpp(119): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [5]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>ATMMainMenu.cpp(127): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [5]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>ATMMainMenu.cpp(139): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [5]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>ATMMainMenu.cpp(166): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [5]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>ATMMainMenu.cpp(185): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [5]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>ATMMainMenu.cpp(186): error C2664: 'void ATL::CStringT<BaseType,StringTraits>::Format(const wchar_t *,...)' : cannot convert parameter 1 from 'const char [5]' to 'const wchar_t *'
+                 with
+                 [
+                     BaseType=wchar_t,
+                     StringTraits=StrTraitMFC<wchar_t>
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>Done Building Project "C:\Users\William\Documents\Visual Studio 2010\Projects\ATM\ATM.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:10.88

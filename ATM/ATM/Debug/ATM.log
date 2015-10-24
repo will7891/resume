@@ -1,0 +1,35 @@
+﻿Build started 4/20/2014 17:56:21.
+     1>Project "C:\Users\William\Documents\Visual Studio 2010\Projects\ATM\ATM.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\ATM.unsuccessfulbuild".
+       ClCompile:
+         All outputs are up-to-date.
+         All outputs are up-to-date.
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _DEBUG /l"0x0409" /IDebug\ /nologo /fo"Debug\ATM.res" ATM.rc 
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\William\Documents\Visual Studio 2010\Projects\ATM\Debug\ATM.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:"Debug\ATM.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\William\Documents\Visual Studio 2010\Projects\ATM\Debug\ATM.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\William\Documents\Visual Studio 2010\Projects\ATM\Debug\ATM.lib" /MACHINE:X86 Debug\ATM.res
+         Debug\ATM.exe.embed.manifest.res
+         Debug\ATM.obj
+         Debug\ATMAccount.obj
+         Debug\ATMAcctActy.obj
+         Debug\ATMAmount.obj
+         Debug\ATMDlg.obj
+         Debug\ATMMainMenu.obj
+         Debug\stdafx.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\ATM.exe.embed.manifest" /manifest Debug\ATM.exe.intermediate.manifest "c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+         All outputs are up-to-date.
+       LinkEmbedManifest:
+         All outputs are up-to-date.
+         ATM.vcxproj -> C:\Users\William\Documents\Visual Studio 2010\Projects\ATM\Debug\ATM.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\ATM.unsuccessfulbuild".
+         Touching "Debug\ATM.lastbuildstate".
+     1>Done Building Project "C:\Users\William\Documents\Visual Studio 2010\Projects\ATM\ATM.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.38

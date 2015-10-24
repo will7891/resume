@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ATM", "ATM.vcxproj", "{06E601A0-C5A9-47CC-9BAB-312B5732C337}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupATM", "..\SetupATM\SetupATM.vdproj", "{86091DA4-CBC9-4F8B-AEE1-05FFE2376CBF}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup2", "..\Setup2\Setup2.vdproj", "{55C63BC1-63D2-4069-BDF0-4975C9CA18D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06E601A0-C5A9-47CC-9BAB-312B5732C337}.Debug|Win32.ActiveCfg = Debug|Win32
+		{06E601A0-C5A9-47CC-9BAB-312B5732C337}.Debug|Win32.Build.0 = Debug|Win32
+		{06E601A0-C5A9-47CC-9BAB-312B5732C337}.Release|Win32.ActiveCfg = Release|Win32
+		{06E601A0-C5A9-47CC-9BAB-312B5732C337}.Release|Win32.Build.0 = Release|Win32
+		{86091DA4-CBC9-4F8B-AEE1-05FFE2376CBF}.Debug|Win32.ActiveCfg = Debug
+		{86091DA4-CBC9-4F8B-AEE1-05FFE2376CBF}.Release|Win32.ActiveCfg = Release
+		{55C63BC1-63D2-4069-BDF0-4975C9CA18D6}.Debug|Win32.ActiveCfg = Debug
+		{55C63BC1-63D2-4069-BDF0-4975C9CA18D6}.Release|Win32.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

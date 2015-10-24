@@ -1,0 +1,49 @@
+621342
+454.54
+845.75
+0 Get Cash from checking, $400.39
+1 Get Cash from savings, $400.00
+2 Deposit to savings, $45.00
+3 Deposit to savings, $54.54
+4 Get Cash from checking, $0.15
+5 Transfer from savings to checking, $45.00
+
+123455
+566.32
+809.04
+0 Deposit to Savings, $.5
+1 Transfer from savings to checking, $1.12
+2 Deposit to savings, $1.00
+3 Deposit to checking, $1.00
+4 Get Cash from savings, $0.02
+5 Deposit to checking, $1.11
+6 Transfer from checking to savings , $650.00
+7 Get Cash from savings, $20.09
+8 Deposit to savings, $0.01
+9 Transfer from savings to checking, $56.00
+10 Transfer from savings to checking, $0.05
+11 Transfer from checking to savings, $0.03
+12 Deposit to savings, $2.22
+13 Get Cash from checking, $68.86
+14 Transfer from savings to checking, $0.45
+15 Deposit to checking, $0.02
+16 Transfer from checking to savings, $1.25
+17 Get Cash from savings, $5.55
+18 Transfer from checking to savings, $21.00
+19 Transfer from savings to checking, $5.00
+20 Deposit to savings, $0.05
+
+156992
+147.89
+0.00
+0 Get Cash from savings, $150.00
+1 Get Cash from savings, $0.02
+
+334402
+1940.55
+3828.68
+0 Get Cash from savings, $45.00
+1 Deposit to savings, $45.00
+2 Deposit to checking, $25.25
+3 Transfer from checking to savings, $21.00
+4 Get Cash from checking, $4.54
