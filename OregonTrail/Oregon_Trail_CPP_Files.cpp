@@ -1,4 +1,14 @@
+/*
+TODO: list item weights in shop - Line 1390
+      --> DONE -> push into separate f(): ostream& fails, string fails
+
+	  in VisitRiver - Line 1260
+	    account for caravan weight for floating
+		"                        " and oxen for fording
+*/
+
 ////////// libraries shared among all classes //////////
+#include <iomanip>
 #include <iostream>
 #include <map>
 #include <string>
@@ -323,7 +333,7 @@ Supplies::Supplies()
     itemInfo info = {0, 0};
     info.weight = 28.0; supplies["rifles"] = info;
     info.weight = 0.2; supplies["bullets"] = info; // 20 / box
-
+	
     // add general goods
     info.weight = 1.5; supplies["clothes"] = info; // 1 set / person
     info.weight = 1.0; supplies["food"] = info; // in pounds
@@ -873,7 +883,6 @@ bool Caravan::goHunting()
         std::cout << "Keep hunting(y/n)? ";
         std::cin >> answer;
     } // while
-
 hunting_end:
     // cap food gain at 300 pounds, less of caravan goes over weight limit
     int weightCheck = foodGained + caravanWeight;
@@ -959,11 +968,16 @@ void Caravan::showSupplies()
         int spaces = 10 - name.size();
         for (int i = 0; i < spaces; i++) std::cout << " ";
         std::cout << info.amount;
-        if (name == "bullets" || name == "food")
+        if (name == "bullets")
         {
-            std::cout << std::endl;
-            continue; // stop if not on condition'ed item
+            std::cout << " bullets" << std::endl;
+            continue; // stop if not on conditioned item
         }
+		else if (name == "food")
+		{
+			std::cout << " pounds" << std::endl;
+			continue;
+		}
 
         // print current item's condition
         if (info.amount != 0) // only bother if item exists
@@ -1019,11 +1033,13 @@ void Caravan::event_for_oxen()
 void Caravan::trade()
 {
     // iterate to 2 random supplies
-    int num1 = rand() % supply.getSize(); // your item
-    int num2 = rand() % supply.getSize(); // their item
+    int num1 = rand() % supply.getSize(); // your item - the number they want from you
+    int num2 = rand() % supply.getSize(); // their item - the number they're willing to give to you
     string s1, s2; itemInfo info1, info2;
     supply.first(s1, info1); for (int i = 0; i < num1; i++) supply.next(s1, info1);
     supply.first(s2, info2); for (int i = 0; i < num2; i++) supply.next(s2, info2);
+	if (info1.amount == 0) info1.amount = 1; // account for 0
+	if (info2.amount == 0) info2.amount = 1; // "           "
 
     // get amount of items
     int amount1 = (rand() % info1.amount) + 1; // yours
@@ -1046,16 +1062,23 @@ void Caravan::trade()
     std::cin >> answer;
     if (answer == 'y' || answer == 'Y')
     {
-        int weightChange = (amount2 * info2.weight) - (amount1 * info1.weight);
-        if (caravanWeight + weightChange > MAX_WEIGHT)
-        {
-            std::cout << "Cannot trade, caravan will become overweight.\n";
-        }
-        else
-        {
-            supply.useSupplies(s1, amount1); // trade out your items
-            supply.addSupplies(s2, amount2); // trade in their items
-        }
+		if (info1.amount > supply.getSupplies(s1).amount) // if they want more than you have...
+		{
+			std::cout << "You don't have enough of that item to trade.\n";
+		}
+		else // you have enough items for the trade
+		{
+            int weightChange = (amount2 * info2.weight) - (amount1 * info1.weight);
+            if (caravanWeight + weightChange > MAX_WEIGHT)
+            {
+                std::cout << "Cannot trade, caravan will become overweight.\n";
+            }
+            else
+            {
+                supply.useSupplies(s1, amount1); // trade out your items
+                supply.addSupplies(s2, amount2); // trade in their items
+			}
+		}
     }   
 } // trade
 void Caravan::sellSupplies()
@@ -1072,11 +1095,11 @@ void Caravan::sellSupplies()
     // print menu
     std::cout << "\nWelcome to the store's buyback counter:"
               << " You have $" << money << " in your pocket.\n\n"
-
+			  
               // options
               << "0 See your supplies\n"
               << "1 Done selling\n"
-              << "2 Sell sets of clothes: $" << prices[0] << std::endl
+              << "2 Sell sets of clothes: $" << prices[0] << std::endl 
               << "3 Sell boxes of bullets: $" << prices[1] << std::endl
               << "4 Sell pounds of food: $" << prices[2] << std::endl
               << "5 Sell wheels: $" << prices[3] << std::endl
@@ -1302,6 +1325,7 @@ void visitRiver (const string& river, Caravan& car)
 int lossOfSupplies(const string& supplyName, int divisor, Caravan& car, bool parts)
 {
     int have = car.getCaravanSupplies(supplyName).amount;
+	if (have == 0) return 0;    // if you had nothing, then you lost nothing
     int loss = (rand() % have) / divisor;
     if (parts) // parts in use count towards supplies
     {
@@ -1336,10 +1360,11 @@ void visitLandmark (const string& name, Caravan& car)
 
     else if (answer == 2)
     {
+		char trade = 'y';
         if (rand() % 4 == 0) do
         {
             car.trade();
-            char trade = 'y';
+            trade = 'y';
             std::cout << "Would you like to trade more(y/n)? ";
             std::cin >> trade;
         } while (trade == 'y' || trade == 'Y');
@@ -1372,6 +1397,7 @@ void visitStore(Caravan& car)
     int cost[7] = {5, 20, 3, 35, 70, 53, 43}; // clothes, bullet box, food, wheel, axle, tongue, rifle
                                              // index by item - 2 since options start at choice #2
     int spend = 0; // cost * amount
+	Supplies sup;  // needed for weights
 
     while(true)
     {
@@ -1386,13 +1412,14 @@ void visitStore(Caravan& car)
 
               // options
               << "1 Done shopping\n"
-              << "2 Buy sets of clothes: $" << cost[0] << std::endl
-              << "3 Buy boxes of bullets (20/box): $"  << cost[1] << std::endl
-              << "4 Buy pounds of food: $" << cost[2] << std::endl
-              << "5 Buy wheels: $" << cost[3] << std::endl
-              << "6 Buy axles: $" << cost[4] << std::endl
-              << "7 Buy tongues: $"  << cost[5] << std::endl
-              << "8 Buy rifles: $" << cost[6] << std::endl
+			  << std::fixed << std::setprecision(2)
+			  << "2 Buy sets of clothes: $" << cost[0] << " (" << sup.getSupplies("clothes").weight << " lbs)" << std::endl
+              << "3 Buy boxes of bullets (20/box): $"  << cost[1] << " (" << sup.getSupplies("bullets").weight << " lbs)" << std::endl
+              << "4 Buy pounds of food: $" << cost[2] << " (" << sup.getSupplies("food").weight << " lbs)" << std::endl
+              << "5 Buy wheels: $" << cost[3] << " (" << sup.getSupplies("wheels").weight << " lbs)" << std::endl
+              << "6 Buy axles: $" << cost[4] << " (" << sup.getSupplies("axles").weight << " lbs)" << std::endl
+              << "7 Buy tongues: $"  << cost[5] << " (" << sup.getSupplies("tongues").weight << " lbs)" << std::endl
+              << "8 Buy rifles: $" << cost[6] << " (" << sup.getSupplies("rifles").weight << " lbs)" << std::endl
               
               // choice
               << "Enter the number for your choice: ";

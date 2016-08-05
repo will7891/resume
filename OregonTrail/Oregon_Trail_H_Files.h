@@ -9,7 +9,6 @@ item / oxen wearDowns + pacing problems resultant
 */
 
 /* ADD
-trade / get money
 events such as 'lost your way' 
  // RNG events
 
@@ -18,12 +17,13 @@ Check supplies      DONE
 Change pace         DONE
 Change food rations DONE
 Stop to rest        DONE
-Attempt to trade    TBA
+Attempt to trade    PENDING
 */
 
 
 ////////// libraries shared among all classes //////////
 #include <map>
+#include <sstream>
 #include <string>
 using std::string;
 
@@ -230,7 +230,7 @@ public:
 
     // general accessors
     itemInfo getSupplies(const string& name); // can't be const b/c of map stuff
-    double   getWeight() const;
+	double   getWeight() const;
     int      getSize() const;
     
 private:

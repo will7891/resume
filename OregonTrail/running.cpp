@@ -1,19 +1,12 @@
-// Oregon_Trail_H_Files
-// Oregon_Trail_CPP_Files
-// Oregon_Trail_DRIVERS_Files
 #include <iostream>
-//using namespace std;
-
 #include <cstdlib>
 
 #include "Oregon_Trail_H_Files.h"
 
 
-
-
 /* NOTES: 
-//        
-          
+   having 1 spare wheels means that the count is at 5, since 4 are required to pull caravan
+   exception hit when forcing across a river
 */
 void setUpCaravan (Caravan&);
 void printCaravanInfo (Caravan&);
@@ -51,17 +44,24 @@ int main()
 
     // set up caravan (people + supplies), pacing, rationing, $$$ done in constructor
         // people in caravan
-/*        string name = ""; int numPeople = 0;
+        string name = ""; int numPeople = 0;
         std::cout << "Who will travel the trail? (max of 4) (0 for done)\n";
         while (numPeople < 4)
         {
             std::cout << "Enter names: ";
             std::getline(std::cin, name);
-            if (name == "0") break;
-            car.setPerson((string)name);   
-            numPeople++;
-        }*/
-        setUpCaravan(car);
+            if (name == "0")
+			{
+				if (numPeople == 0) std::cout << "You need at least 1 person to travel the trail.\n";
+				else break;
+			}
+			else
+			{
+                car.setPerson((string)name);   
+                numPeople++;
+			}
+        }
+        //setUpCaravan(car);
     
         // supplies
         visitPitStop(pitStops[stop].name, car);
@@ -98,7 +98,7 @@ int main()
             if (p.getSickness() == Ill::illness[6]) dead++;
         } while (car.next(p));
         std::cout << std::endl;
-        if (dead == 3) {diedAlongTrail = true; break; } // everyone dead
+        if (dead == numPeople) {diedAlongTrail = true; break; } // everyone dead
         
         // get new pacing and rationing (uses loopCount)
         string answer = "";
