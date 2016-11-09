@@ -1,0 +1,66 @@
+﻿body{}
+
+a {text-decoration: none;}
+
+/*fix note color by 'a:visited {color: Black;}'*/
+
+.nav-list a,
+.nav-list a:visited,
+.nav-list a:active,
+.nav-list a:link {color: White;}
+
+.nav-list {
+    width: 504px;
+    height: 50px;
+    margin: 0 auto;
+    background-color: Pink;
+}
+
+.nav-list ul {
+    list-style-type: none; 
+    margin: 0 auto;
+    height: inherit;
+    padding: 0; /*eliminate indent*/ 
+}
+
+.nav-list li 
+{
+    float: left;
+    width: 166px;
+    height: 100%;
+    text-align: center;
+    border: 1px solid Blue;
+}
+
+.nav-list li a
+{
+    color: Blue;   
+    vertical-align: middle;
+}
+
+/* ************************ */
+.card-item {
+    width: 40%;
+    height: 150px;
+    float: left;
+    border: 2px solid;
+    margin: 15px;
+    border-radius: 10%;
+    background-color: Aqua;   
+}
+
+.card {
+    text-align: center;
+}
+
+.card-notes {
+    background-color: Yellow;
+}
+
+.card-users {
+    background-color: Lime;     
+    position: relative;
+}
+
+.hidden {display: none;}
+.shown {display: block;}
