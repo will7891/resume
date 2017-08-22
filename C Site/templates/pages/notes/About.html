@@ -1,0 +1,40 @@
+﻿<div id="about">
+    <h1>About Colleen Quisumbing</h1>
+    <p>I have a Bachelor's degree in Psychology from San Jose State University, and a Master's Degree in Counseling from CSU East Bay.
+       I began providing counseling services in 2008 and became a licensed Marriage and Family Therapist in 2012. 
+       I have experience providing therapy to adults and children who have faced a variety of challenges in life and in their relationships.
+       I currently provide psychotherapy services at my private practice location in downtown Sunnyvale, and am also a Clinical Director 
+         at the Center for Learning and Autism Support Services.
+    </p>
+    <p>I have an eclectic approach to therapy and may draw from several different theoretic approaches to find the best interventions
+       for my clients. Theoretical approaches (therapies) used include: 
+    </p>
+    <div class="therapies-wrapper"> <!-- functionally the same as doing 1 <div.therapy-wrapper> on full repeat -->
+      <div class="therapy-wrapper" ng-repeat="therapy in therapies | limitTo:3 | limitTo:-3">
+        <therapy-card type=therapy.type identity=therapy.id></therapy-card>  
+        <div id="therapy-description{{therapy.id}}" class="therapy-desc">
+            <p class="hidden">{{therapy.description}}</p>
+        </div>      
+      </div>
+      <div class="therapy-wrapper" ng-repeat="therapy in therapies | limitTo:6 | limitTo:-3">
+        <therapy-card type=therapy.type identity=therapy.id></therapy-card>  
+        <div id="Div1" class="therapy-desc">
+            <p class="hidden">{{therapy.description}}</p>
+        </div>       
+      </div>
+      <!--<div class="therapy-desc">
+          <p></p>
+      </div>-->
+    </div>
+</div>
+<!-- want to fill a div below row with desc of item hovered
+     -> onHover display div + populate w/ desc of that item
+        -> need access to that item's therapy object, it's desc attribute
+     -> needs to be outside of ng-repeat, must store object desc information on tag or smthg
+     -> OR have hidden paragraph on each, populate extra div w/ it's info
+     ------ -> for now ensure that onclick works by using hidden/shown
+     --> 
+     
+ 
+
+

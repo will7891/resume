@@ -1,0 +1,82 @@
+﻿<!-- NOTEs
+  either jquery library will work
+  jquery click events now look like: $('body').on("click", '#user1', function() {...});
+  nw-user-card.js uses jquery in link property
+
+  /* won't work either - NOT important */
+  <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+  <pre>$route.current.params = {{main.$route.current.params}}</pre>
+  <pre>$routeParams = {{main.$routeParams}}</pre>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" ng-app="NoteWrangler">
+<head>
+    <title>Note Wrangler</title>
+    <link rel="Stylesheet" href="css/application.css" />  
+</head>
+<body >
+    <div class="main-content-wrapper">
+        <div id="nav-list">
+          <ul>
+            <li class="activeTab"><a href="#/home/">Home</a></li>
+            <li><a href="#/about">About</a></li>
+            <li><a href="#/services">Services</a></li>
+            <li><a href="#/contact">Contact</a></li>
+          </ul>
+          
+        </div>  
+        <div class="content-wrapper">
+            <div id="ng-view" ng-view></div>
+        </div>
+    </div>    
+       
+
+        <!-- VENDORS -->
+        <script type="text/javascript" src="javascript/vendor/jQuery2.js"></script>
+        <script type="text/javascript" src="javascript/vendor/angular.js"></script>
+        <script type="text/javascript" src="javascript/vendor/angular-route.js"></script>
+        <script type="text/javascript" src="javascript/vendor/angular-resource.js"></script>
+
+        <!-- MAIN + CONTROLLERS -->
+        <script type="text/javascript" src="javascript/app.js" ></script>
+        <script type="text/javascript" src="javascript/controllers/notes-index-controller.js"></script>
+        <script type="text/javascript" src="javascript/controllers/users-index-controller.js"></script>
+        <script type="text/javascript" src="javascript/controllers/notes-show-controller.js"></script>
+        <script type="text/javascript" src="javascript/controllers/site-about-controller.js"></script>
+
+        <!-- DIRECTIVES -->
+        <script type="text/javascript" src="javascript/directives/nw-card.js"></script>       
+        <script type="text/javascript" src="javascript/directives/nw-user-card.js"></script>
+        <script type="text/javascript" src="javascript/directives/therapy-card.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#nav-list li:nth-child(2) a").trigger("click");
+
+                $("#nav-list").on('click', 'li', function () {
+                    if ($(this).hasClass("activeTab")) return;
+                    else {
+                        $(".activeTab").removeClass("activeTab");
+                        $(this).addClass("activeTab");
+                        $(this).children("a").trigger("click");
+                    }
+                });
+                $("#nav-list li:nth-child(2)").trigger("click");
+
+               /* $("#about .therapy-wrapper").on('click', '.card-therapy', function () {
+                    alert("in clicky");
+                    var u = "#about .therapy-desc p";
+                    $(u).text(function () {
+                        return $("#about .therapy-description p").text();
+                    }); 
+                    $(u).removeClass("hidden"); $(u).addClass("shown");
+                });*/
+
+            });
+        </script>
+</body>
+</html>
+
+

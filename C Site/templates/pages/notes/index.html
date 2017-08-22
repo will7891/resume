@@ -1,0 +1,21 @@
+﻿<div class="note-wrapper">
+  <div class="note-contact">
+    <div class="note-header">
+      <h1 title="Notes">Notes</h1>
+    </div>
+    <div class="note-wrapper">
+      <!-- VERSION 1
+      <a class="card-notes card-item" ng-repeat="note in indexController.notes" ng-href="#/notes/{{note.id}}" >
+       <div class="card" title="{{note.title}}">
+          <h2 class="h3">{{note.title}}</h2>
+          <p>{{note.description}}</p>
+       </div>
+      </a> -->
+
+      <!-- VERSION 2 -->
+      <a class="card-notes card-item" ng-repeat="note in notes" ng-href="#/notes/{{note.id}}">      
+          <nw-card header='note.title' desc='note.description'></nw-card> <!-- VERSION 2 -->
+      </a>
+    </div> 
+  </div>
+</div>

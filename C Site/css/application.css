@@ -1,0 +1,130 @@
+﻿body 
+{
+    height: 1000px;
+    background: linear-gradient(purple, #ede6ef) no-repeat;
+}
+
+a {text-decoration: none;}
+
+/*fix note color by 'a:visited {color: Black;}'*/
+.main-content-wrapper {width: 80%; margin: 10px auto; background-color: #ebe3f2; height: 90%;}
+.content-wrapper      {width: 80%; margin: 10px auto; background-color: green; height: 90%;}
+#ng-view {height:100%; width:100%;}
+
+/************** Navigation **************/
+#nav-list a,
+#nav-list a:visited,
+#nav-list a:active,
+#nav-list a:link {color: White;}
+
+#nav-list {
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    background-color: #cea1ca;
+}
+
+#nav-list ul {
+    list-style-type: none; 
+    margin: 0 auto;
+    height: inherit;
+    padding: 0;
+    width: 100%;
+}
+
+#nav-list li 
+{
+    float: left;
+    width: 24%;
+    height: 100%;
+    text-align: center;
+}
+
+#nav-list li:hover {color: White; background-color: Grey; cursor: pointer;}
+
+#nav-list li a
+{
+    color: White;   
+    font-size: 32px;   
+}
+
+#nav-list li.activeTab 
+{
+    color: Black;
+    background-color: #ce09b2;
+}
+
+/* ***************** Cards ***************** */
+
+.card-item {
+    width: 40%;
+    height: 150px;
+    float: left;
+    border: 2px solid;
+    margin: 15px;
+    border-radius: 10%;
+    background-color: Aqua;   
+}
+
+.card {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.card-notes {
+    background-color: Yellow;
+}
+
+.card-users {
+    background-color: Lime;     
+    position: relative;
+}
+
+.hidden {display: none;}
+.shown {display: block;}
+
+/******************* About **********************/
+#about 
+{
+    width: 100%; 
+    height: inherit; 
+    background-color:Pink;
+}
+
+#about h1 
+{
+    text-align: center; 
+    vertical-align: middle;
+}
+
+#about p {text-indent: 25px;}
+
+#about .therapies-wrapper /* encapsulates all therapy bubbles */
+{
+    width: 90%; height: 50%;
+    background-color: Aqua;
+    margin: 25px auto;
+}
+
+#about .therapy-wrapper /* encapsulates 1 therapy bubble */
+{
+    background-color: Yellow;
+    width: 28%; float:left;  
+    height: 120px;
+    margin: 0 20px 50px 20px;
+}
+
+.card-therapy /* a therapy bubble */
+{
+    background-color: Beige;
+    width: 70%; height: 100px;
+    border: 2px solid Red;
+    margin: 5px auto; border-radius: 60%;
+}
+
+.therapy-desc
+{
+    width: 100%;
+    height: auto;
+    background-color: Orange;
+}
