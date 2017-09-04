@@ -81,32 +81,307 @@ first child of the left and right table columns */
 
 /* PRIMARY LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
-/*
-.page
+#mainPage
 {
-    width: 960px;
-    background-color: #fff;
-    margin: 20px auto 0px auto;
-    border: 1px solid #496077;
+    height: auto;
+    width: 100%;
+    background-color: Pink;
 }
-
-*/
-.main
+#mainSection
 {
-    /*padding: 0px 12px;
-    margin: 12px 8px 8px 8px;*/
     min-height: 420px;
 }
-
-/* MISC  
-----------------------------------------------------------*/
 
 .clear
 {
     clear: both;
 }
 
+.hidden {visibility: hidden;}
+
 /* ------------------------ MY STYLES ----------------------
+ .visible
+        {
+            visibility: visible;
+        }
+        .hidden
+        {
+            visibility: hidden;
+        }
+        form 
+        {
+            /*white-space: nowrap;
+            overflow-x: auto;*/
+        }
+        body
+        {
+            background-color: rgb(204, 204, 255);
+            margin: 0;       
+            white-space: nowrap;
+            position: relative; top: -10px; /* clear space above fixed header */
+        }
+        .thumb 
+        {
+            width: 30px;
+            height: 30px;
+            margin-top: 8px;
+        }
+        
+        /******************** NAVIGATION *********************/
+        #header 
+        {
+            width: 100%;
+            height: 55px;
+            z-index: 1;
+            position: fixed;
+            top: -1px;
+            background-color: Salmon;
+        }       
+        #header .wrapper
+        {
+            width: 97%;
+            height: 70%;
+            margin: 6px auto; /* auto fails */
+            background-color: Aquamarine;
+        }
+        
+        /**** LOGO + MENU BUTTON *****/
+        #header .logo
+        {
+            width: 17%;
+            height: 100%;
+            background-color: Aqua;
+            float: left;
+            margin-left: 5px;
+            font-size: 20px;
+            margin: auto 0;
+        }
+        #header .logoText
+        {
+            font-size: inherit;
+            margin: auto 0;
+        }
+        
+        #header .menuButton
+        {
+            width: 40px;
+            height: 30px;
+            float: left;
+            margin: auto 10px auto 0;
+        }
+        #header .menuButton img
+        {
+            width: 100%;
+            height: 100%;
+        }
+        
+        /***** INPUT *****/
+        #header .search
+        {
+            width: 50%;
+            height: 100%;
+            margin: 0 auto;
+            float: left;
+            background-color: Lime;
+        }
+
+        #header input
+        {
+            width: 85%;
+            height: 80%;
+            font-size: 1.5em; /* auto-sets input height */
+            float: left;
+            border-radius: 5px;
+        }
+        
+        #header .search button
+        {
+            width: 12%;
+            height: 100%;
+            float: right;
+            min-width: 30px;
+        }
+        
+        /***** SETITNGS *****/       
+        #header .settings
+        {
+            width: 20%;
+            height: 100%;
+            float: right;
+            margin-right: 15px;
+            background-color: Aqua;
+        }
+        
+        #header .settings img
+        { float: right;}
+      
+        
+        
+        
+        /***** MENU *****/
+         #menu
+        {
+           width: 250px;
+           height: 470px;
+           background-color: White;
+           z-index: 1;
+           position: fixed;
+           top: 50px;
+           font-size: 1.2em;
+           overflow: auto;
+        }
+        #menu .wrapper
+        {
+            margin: 20px 0 40x 30px;
+        }
+        #menu ul
+        {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 0;            
+        }
+        #menu ul.first
+        {
+            margin-top: 10px;
+        }
+        #menu ul li
+        {
+            margin: 5px 0 5px 20px;
+            width: 80%;
+        }
+        #menu .first_menu_item
+        {
+            background-color: Red;
+        }
+        #menu .second  span, #menu .third span
+        {
+            padding: 0;
+            margin: 0;
+            font-size: 0.7em;
+            color: Red;
+        }
+        #menu li img
+        {
+            width: 20px;
+            height: 20px;
+            padding: 0 5px;
+        }
+        #menu hr
+        {
+            border-color: Red;
+            color: Red;
+            border-top-color: Red;
+            width: 85%;
+            margin: 0 auto;
+        }
+        
+        
+        
+        
+        
+        
+        /*********************** REST ***********************/
+        #rest
+        {
+            position: relative;
+            top: 100px;
+            white-space: nowrap;
+        }
+        #mainSection
+        {
+            /*margin: 10px 80px 0 50px;*/
+            margin: 10px auto;
+            background-color: Green;
+            height: 800px;
+            width: 870px;
+            white-space: nowrap;
+        }
+        #mainSection .wrapper
+        {
+            padding: 20px;
+        }
+        #mainSection .recommend
+        {
+            font-size: 1.8em;
+        }
+        #mainSection .video
+        {
+            margin: 0 10px 10px 0;
+            float: left;
+            width: 260px;
+            height: 230px;
+            background-color: Gray;
+        }
+        #mainSection .video_image
+        {
+            width: 100%;
+            height: 150px;
+        }
+        #mainSection .title
+        {
+            font-size: 1.5em;
+            color: Azure;
+        }
+        #footer 
+        {           
+            width: 1200px;
+            height: 300px;
+            background-color: Gray;
+            margin-top: 50px;
+            white-space: nowrap;
+        }
+        #footer .wrapper
+        {
+            margin: 30px auto;
+            position: relative; /* margin failing, force fix */
+            top: 30px;          /* may be due to moving everything down 100px*/  
+            width: 90%;
+            height: 60%;
+        }
+        #footer .top
+        {
+            height: 20%;
+        }
+        #footer .logo_wrapper
+        {
+            float: left;
+            width: 110px;
+            height: 100%;
+        }
+        #footer .button
+        {
+            width: 130px;
+            height: 100%;
+            margin: 0 15px;
+            float: left;
+            background-color: Red;
+        }
+        #footer .bottom ul
+        {
+            list-style-type: none;
+            padding: 0;
+            clear: right;
+        }
+        #footer .bottom ul li
+        {
+            margin: 0 10px;
+            float: left;
+        }
+        #footer .row1
+        {
+            color: Black;
+            font-size: 1.2em;
+            clear: right;
+        }
+        #footer .row2
+        {
+            color: Silver;
+            font-size: 1em;
+        }
+        
+       
+
+
 ---------------------------------------------------------------- */
 
 
